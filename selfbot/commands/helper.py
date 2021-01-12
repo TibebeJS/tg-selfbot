@@ -1,4 +1,4 @@
-from custom_types import UserbotCommand, Argument
+from selfbot.types import UserbotCommand, Argument
 from itertools import zip_longest
 from asyncio import sleep
 

@@ -1,7 +1,6 @@
-from custom_types import UserbotCommand, Argument
+from selfbot.types import UserbotCommand, Argument
 from time import time, strftime, localtime
 from asyncio import sleep
-
 
 class Command(UserbotCommand):
     def __init__(self, client):

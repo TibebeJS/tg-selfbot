@@ -1,12 +1,10 @@
 from telethon import TelegramClient
-from custom_types import SubCommand, Argument, CustomArgumentParser
-
+from selfbot.types import SubCommand, Argument, CustomArgumentParser
 
 from telethon.events import NewMessage
 from io import StringIO
 import shlex
 import sys
-
 
 class UserbotCommand:
     def __init__(

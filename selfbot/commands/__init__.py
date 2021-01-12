@@ -1,5 +1,4 @@
 from . import ls, helper
-
 active_commands = []
 
 # comment the line to disable a specific command handler
