@@ -3,9 +3,9 @@ from time import time, strftime, localtime
 from asyncio import sleep
 
 class Command(UserbotCommand):
-    def __init__(self, client):
+    def __init__(self, instance):
         super().__init__(
-            client,
+            instance,
             command="ls",
             mutually_exclusive_arguments=[
                 [

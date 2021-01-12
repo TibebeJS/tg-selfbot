@@ -3,9 +3,9 @@ from itertools import zip_longest
 from asyncio import sleep
 
 class Command(UserbotCommand):
-    def __init__(self, client):
+    def __init__(self, instance):
         super().__init__(
-            client,
+            instance,
             command="help",
             sub_commands_required=False,
             arguments=[
@@ -21,13 +21,12 @@ class Command(UserbotCommand):
         )
 
     async def handler(self, event, args):
-        from . import active_commands
 
-        commands = map(lambda commandObj: f"`{commandObj.prefix}{commandObj.command}`", active_commands)
+        commands = map(lambda commandObj: f"`{commandObj.prefix}{commandObj.command}`", self.instance.active_commands)
 
         if args.command:
             try:
-                await event.message.reply(list(filter(lambda command: command.command == args.command, active_commands))[0].get_help())
+                await event.message.reply(list(filter(lambda command: command.command == args.command, self.instance.active_commands))[0].get_help())
             except IndexError:
                 await event.message.reply(f"could not find the help for the command specified.")
         else:

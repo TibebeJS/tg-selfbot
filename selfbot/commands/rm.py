@@ -4,9 +4,9 @@ from asyncio import sleep
 
 
 class Command(UserbotCommand):
-    def __init__(self, client):
+    def __init__(self, instance):
         super().__init__(
-            client,
+            instance,
             command="rm",
             sub_commands_required=False,
             arguments=[

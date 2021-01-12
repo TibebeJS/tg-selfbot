@@ -9,7 +9,7 @@ import sys
 class UserbotCommand:
     def __init__(
         self,
-        client,
+        instance,
         command,
         arguments=[],
         mutually_exclusive_arguments=[],
@@ -19,7 +19,8 @@ class UserbotCommand:
         sub_commands_required=False,
         outgoing=True,
     ):
-        self.client = client
+        self.instance = instance
+        self.client = instance.client
         self.command = command
         self.arguments = arguments
         self.mutually_exclusive_arguments = mutually_exclusive_arguments
