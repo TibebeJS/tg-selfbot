@@ -6,8 +6,34 @@ The selfbot creates a folder named "`KEEP_SECRET`" upon operation to keep sensit
 It contains your telegram/telethon session which can be used to authenticate as you.
 
 ## How to run:
-### By building Docker image:
+### Step 1:
+Goto https://my.telegram.org and create application.\
+Create a file called `.env` in the format
+```
+API_ID=<REPLACE_WITH_YOUR_APP_ID>
+API_HASH=<REPLACE_WITH_YOUR_APP_HASH>
+```
+and replace those values for your app.
+
+### Step 2:
+#### Pull an already built Image from Docker Hub:
+```
+docker pull tibebesjs/tg-selfbot
+```
+and then:
+```
+docker run -i --tty --env-file .env -v $(pwd)/KEEP_SECRET:/bot/KEEP_SECRET tg-selfbot
+```
+
+#### Alternatively, you can build a Docker image yourself:
 First run the following to build the image:
+```
+git clone git@github.com:TibebeJS/tg-selfbot.git
+```
+```
+cd tg-selfbot
+```
+After that, build the image:
 ```
 docker build . -t selfbot
 ```
