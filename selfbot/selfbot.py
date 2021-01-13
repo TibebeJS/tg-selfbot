@@ -3,7 +3,7 @@ from selfbot import commands
 
 class SelfBot:
     def __init__(self, api_id, api_hash, session = "session"):
-        self.client = TelegramClient(session, api_id, api_hash)
+        self.client = TelegramClient(f'./KEEP_SECRET/{session}', api_id, api_hash)
         self.active_commands = []
         self.initilize()
 
