@@ -22,7 +22,7 @@ docker pull tibebesjs/tg-selfbot
 ```
 and then:
 ```
-docker run -i --tty --env-file .env -v $(pwd)/KEEP_SECRET:/bot/KEEP_SECRET tg-selfbot
+docker run -i --tty --env-file .env -v $(pwd)/KEEP_SECRET:/bot/KEEP_SECRET tibebesjs/tg-selfbot
 ```
 
 #### Alternatively, you can build a Docker image yourself:
